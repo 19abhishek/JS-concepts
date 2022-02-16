@@ -12,20 +12,11 @@ const user = {
   },
 };
 
-let ans = {};
-
-// for (var key in user) {
-//   const newObject = { key: user[key] };
-//   ans = { ...newObject };
-// }
-
-// console.log(ans);
-
-const magicFunction = (user, str, ans) => {
+const magicFunction = (user, str) => {
   for (var key in user) {
     var name = str + "_" + key;
     if (typeof user[key] === "object") {
-      magicFunction(user[key], name, ans);
+      magicFunction(user[key], name);
     } else {
       ans[name] = user[key];
     }
@@ -39,6 +30,21 @@ const magicFunction = (user, str, ans) => {
   // });
 };
 
-magicFunction(user, "user", ans);
+let da = {};
+
+magicFunction(user, "user");
 
 console.log(ans);
+
+let ans = {};
+
+const usr = [1, 2, 3];
+
+let a = {};
+
+for (var key of usr) {
+  const newObject = { k: key };
+  a = { a, ...newObject };
+}
+
+console.log(a);
