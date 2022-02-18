@@ -8,7 +8,7 @@ const throttle = (func, time, ...args) => {
   let flag = true;
   return function () {
     if (flag) {
-      func.call(this, args);
+      func.call(this, ...args);
       flag = false;
       setTimeout(() => {
         flag = true;
