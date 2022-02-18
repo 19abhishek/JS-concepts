@@ -30,13 +30,13 @@ const magicFunction = (user, str) => {
   // });
 };
 
+let ans = {};
+
 let da = {};
 
 magicFunction(user, "user");
 
 console.log(ans);
-
-let ans = {};
 
 const usr = [1, 2, 3];
 
@@ -48,3 +48,23 @@ for (var key of usr) {
 }
 
 console.log(a);
+
+let arr = [1, 2, [3, [4, 5], 6], [7]];
+
+console.log(typeof arr);
+
+let flat = [];
+
+function flattenArray(arr, ans) {
+  for (let x of arr) {
+    if (typeof x === "object") {
+      flattenArray(x, ans);
+    } else {
+      flat = [ans, x];
+    }
+  }
+}
+
+flattenArray(arr, []);
+
+console.log(flat);
