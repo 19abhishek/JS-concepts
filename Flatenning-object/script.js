@@ -60,7 +60,7 @@ function flattenArray(arr, ans) {
     if (typeof x === "object") {
       flattenArray(x, ans);
     } else {
-      flat = [ans, x];
+      flat.push(x);
     }
   }
 }
