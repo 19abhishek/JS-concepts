@@ -21,3 +21,24 @@ const fname = "Abhishek";
 const lname = "Kumar";
 
 const throttling = throttle(increaseCount, 400, fname, lname);
+
+// debounce
+const debounce = (fn, delay) => {
+  let timer = null;
+  return (...args) => {
+    if (timer) clearTimeout(timer);
+    timer = setTimeout((_) => fn(...args), delay);
+  };
+};
+
+// throttle
+const throttle = (fn, delay) => {
+  let timer = null;
+  return (...args) => {
+    if (timer) return;
+    timer = setTimeout((_) => {
+      fn(...args);
+      timer = null;
+    }, delay);
+  };
+};
