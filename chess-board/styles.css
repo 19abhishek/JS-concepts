@@ -1,0 +1,19 @@
+.chess {
+  display: grid;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  grid-template-rows: repeat(8, minmax(0, 1fr));
+}
+.boxDiv {
+  width: 4rem;
+  height: 4rem;
+}
+.boxDiv.even {
+  background-color: white;
+}
+
+.boxDiv.odd {
+  background-color: black;
+}
+.red {
+  background-color: red !important;
+}
