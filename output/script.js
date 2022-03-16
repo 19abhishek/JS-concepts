@@ -76,16 +76,40 @@
 // }
 // x();
 
-function x() {
-  for (var i = 1; i <= 5; i++) {
-    function close(i) {
-      setTimeout(function () {
-        console.log(i);
-      }, i * 1000);
-      // put the setT fun inside new function close()
-    }
-    close(i); // everytime you call close(i) it creates new copy of i. Only this time, it is with var itself!
-  }
-  console.log("This is Hari");
-}
-x();
+// function x() {
+//   for (var i = 1; i <= 5; i++) {
+//     function close(i) {
+//       setTimeout(function () {
+//         console.log(i);
+//       }, i * 1000);
+//       // put the setT fun inside new function close()
+//     }
+//     close(i); // everytime you call close(i) it creates new copy of i. Only this time, it is with var itself!
+//   }
+//   console.log("This is Hari");
+// }
+// x();
+
+// console.log("Start"); // this calls the console web api (through window) which in turn actually modifies values in console.
+
+// setTimeout(function cbT() {
+//   console.log("CB Timeout");
+// }, 5000);
+
+// fetch("https://jsonplaceholder.typicode.com/posts").then(function cbF() {
+//   console.log("CB Netflix");
+// });
+
+// console.log("End");
+
+const object = {
+  who: "World",
+  greet() {
+    return `Hello, ${this.who}!`;
+  },
+  farewell: () => {
+    return `Goodbye, ${this.who}!`;
+  },
+};
+console.log(object.greet()); // What is logged?
+console.log(object.farewell()); // What is logged?
